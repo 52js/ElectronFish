@@ -1,0 +1,217 @@
+@import url("font.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+}
+
+:root {
+  font-weight: bold;
+  --font: "Roboto", sans-serif;
+  --logo-font: "Pacifico", cursive;
+  --roundness: 0.5rem;
+  --bg-color: #111;
+  --main-color: #eee;
+  --caret-color: #eee;
+  --sub-color: #444;
+  --text-color: #eee;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+}
+
+.textButton {
+  display: flex;
+  align-content: center;
+  color: var(--sub-color);
+  border: none;
+  border-radius: var(--roundness);
+  cursor: pointer;
+  height: min-content;
+  width: min-content;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1rem;
+  transition: 0.125s;
+}
+
+.textButton .text {
+  margin-left: 0.4rem;
+}
+
+.centerContent {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 4.5rem;
+}
+
+#top {
+  display: flex;
+  flex-direction: column;
+}
+
+#top .logo {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-family: var(--logo-font);
+  font-weight: normal;
+  cursor: pointer;
+}
+
+#top .logo .text {
+  position: relative;
+  margin-left: 0.7rem;
+}
+
+#center {
+  display: flex;
+  align-items: center;
+}
+
+.score {
+  font-family: var(--logo-font);
+  text-align: center;
+  width: 100%;
+  font-size: 10rem;
+  line-height: 10rem;
+  z-index: 10;
+}
+
+.score .count {
+  width: min-content;
+  transition: all 0.1s cubic-bezier(0.5, 0.35, 0.15, 1.4);
+  transform: scale(1);
+  margin: 0 auto;
+}
+
+.score .subtitle {
+  font-size: 2rem;
+  color: var(--sub-color);
+  line-height: 2.5rem;
+}
+
+#center {
+  display: flex;
+  justify-content: center;
+}
+
+#center .myFish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.1s cubic-bezier(0.5, 0.35, 0.15, 1.4);
+  transform: scale(1);
+}
+
+#bottom {
+  color: var(--sub-color);
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  padding: 0 5px;
+  position: relative;
+  text-align: center;
+}
+
+#bottom .keyTips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bottom .keyTips key {
+  color: var(--bg-color);
+  background-color: var(--sub-color);
+  margin: 0.3rem 0.45rem;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  line-height: 0.7rem;
+}
+
+#bottom .leftRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#bottom .left {
+  font-size: 12px;
+}
+
+#bottom .right {
+  width: 100px;
+}
+
+#bottom .right a {
+  width: 100%;
+}
+
+#bottom .textButton:hover {
+  color: var(--text-color);
+}
+
+@media only screen and (max-width: 700px) {
+  .centerContent {
+    padding: 1rem 1rem;
+  }
+  #top {
+    align-items: center;
+  }
+  #top .text {
+    font-size: 2rem;
+  }
+  #bottom .leftRight {
+    margin-top: 2rem;
+  }
+}
+
+.autoClick {
+  margin-left: 10px;
+  text-decoration: underline;
+  padding: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.autoClick.confirm {
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+}
+
+.subtitleCountTip {
+  height: 35px;
+  line-height: 35px;
+  color: #FFFFFF;
+  position: absolute;
+  left: 50%;
+  font-size: 16px;
+  animation: mymove 1s;
+  opacity: 0;
+}
+
+@keyframes mymove {
+  from {top: -40px; opacity: 1;}
+  to {top: -80px; opacity: 0;}
+}
+
+.centerContent #center {
+  position: relative;
+}
